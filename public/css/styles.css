@@ -1,0 +1,121 @@
+*{
+    margin: 0px;
+    padding: 0px;    
+    box-sizing: border-box;
+}
+
+body{
+    
+    font-family:sans-serif;
+    background-image: linear-gradient(to right top, #b70fee, #db00c8, #ed00a4, #f40083, #f20f68);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    padding-bottom: 3em;
+    color: white;
+
+}
+a{
+    color: white;
+    font-size: small;
+    font-family: sans-serif;
+    padding: 5px;
+}
+h2{
+    text-align: center;
+    font-size: small;
+    font-weight: normal;
+}
+/* HEADER */
+
+.fa-globe {
+    color: white;
+    padding:5px;
+}
+.fa-user{
+    color: white;
+    padding:5px;
+}
+.fa-cart-shopping{
+    color: white; 
+    padding: 5px;
+}
+
+.nav-bar-login{
+
+    display: flex;   
+    font-style: oblique;
+    text-decoration: none;    
+}
+.nav-bar-menu{
+    display: flex;
+    justify-content: space-around;
+    text-decoration:none;
+    font-style: oblique;
+}
+.enlaces{
+    display: flex;
+}
+.footer-nav{
+    display: flex;
+   
+    justify-content: center;
+    padding-right: 5px;
+    font-style: oblique;
+    text-decoration: none;
+    padding:10px;
+
+}
+/*main{
+    width: 90%;
+    margin: 0 auto;
+}*/
+/* IMAGEN LOGO*/
+.imgLogo{
+    
+    width: 20%;
+    height: 20%;
+   
+}
+.center {
+    width: 90%;
+    height: 90%;   
+    display: flex;
+}
+/* LOGIN */
+
+
+footer {
+    background-color: transparent;
+    position: absolute;
+    bottom: 3em;
+    width: 100%;
+    height: 40px;
+    padding: auto;
+  }
+
+li{
+    display: flex;
+    padding: auto;
+    text-align: left;
+}
+/* PRODUCT DETAIL */
+
+ .box {
+        display: flex;
+        flex-direction: column ;
+        align-items: center;
+        justify-content: center;
+}
+      
+.box image{
+    width: 80%;
+}
+
+@media(min-width: 460px){
+    /* Smartphone */
+}
+
+@media(min-width: 460px){
+    /* Smartphone */
+   
+}

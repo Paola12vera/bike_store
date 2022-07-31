@@ -1,0 +1,75 @@
+body,html{
+    height: 100%;
+}
+body{
+    margin: 0px;
+    padding: 0px;    
+    background-image: linear-gradient(to right top, #b70fee, #db00c8, #ed00a4, #f40083, #f20f68);
+    /*background-repeat: no-repeat;*/
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+.form-box{
+    width: 300px; 
+    padding: 40px;
+    background-color: black;
+    text-align: center;
+    border-radius: 25px;
+
+    
+}
+.form-title{
+    text-transform: uppercase;
+    font-weight: 300;
+    color: white;
+}
+.form-box input[type="text"],
+.form-box input[type="password"],
+.form-box button[type = "submit"],
+.form-box input[type="email"]{
+    border:0px;
+    background:none;
+    display: block;
+    margin:20px auto;
+    padding:14px 20px;
+    text-align: center;
+    border: 2px solid #1676d6;
+    width: 200px;
+    outline: none;
+    color: white;
+    border-radius: 25px;
+}
+.form-box input[type = text]:focus,
+.form-box input[type = password]:focus{
+    width: 280px;
+    border-color: white;
+}
+.form-box button[type = "submit"]{
+    border:0;
+    background: #5332ed;
+    cursor: pointer;
+    border: 2px;
+}
+.form-box button[ type="Submit"]:hover{
+    background: none;
+}
+
+#birth_date{
+    border:0px;
+    background:none;
+    display: block;
+    margin:20px auto;
+    padding:14px 20px;
+    text-align: center;
+    border: 2px solid #1676d6;
+    width: 200px;
+    outline: none;
+    color: white;
+    border-radius: 25px;
+}
+
+
