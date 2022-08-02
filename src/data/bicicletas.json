@@ -1,0 +1,92 @@
+[
+    {
+        "id": 1,
+        "name": "Bicicleta doble suspensión",
+        "description": "aenean fermentum donec ut mauris eget massa tempor convallis nulla neque libero convallis eget eleifend luctus ultricies eu",
+        "image": "PRODUCTS-bicicleta-001.png",
+        "category": "Bicicletas de paseo",
+        "colors": "Negro",
+        "price": 769.08
+    },
+    {
+        "id": 2,
+        "name": "",
+        "description": "magna vulputate luctus cum sociis natoque penatibus et magnis dis parturient montes nascetur ridiculus mus vivamus vestibulum sagittis sapien cum sociis natoque penatibus et magnis dis parturient montes nascetur ridiculus mus etiam vel augue vestibulum rutrum rutrum neque aenean auctor gravida sem praesent id massa id",
+        "image": "PRODUCTS-bicicleta-002.png",
+        "category": "Bicicletas para niños",
+        "colors": "Rojo",
+        "price": 938.69
+    },
+    {
+        "id": 3,
+        "name": "Bicicleta rigida Spike",
+        "description": "nisi vulputate nonummy maecenas tincidunt lacus at velit vivamus vel nulla eget eros elementum pellentesque quisque porta volutpat erat quisque erat eros viverra eget congue eget semper",
+        "image": "PRODUCTS-bicicleta-003.png",
+        "category": "Bicicletas de paseo",
+        "colors": "Azul",
+        "price": 256.23
+    },
+    {
+        "id": 4,
+        "name": "Bicicleta doble suspencion Cannodale",
+        "description": "id luctus nec molestie sed justo pellentesque viverra pede ac diam cras pellentesque volutpat dui maecenas tristique est et tempus semper est quam pharetra magna ac consequat metus sapien ut nunc vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae mauris viverra diam vitae quam",
+        "image": "PRODUCTS-bicicleta-004.png",
+        "category": "Bicicletas para niños",
+        "colors": "Negro",
+        "price": 113.41
+    },
+    {
+        "id": 5,
+        "name": "Bicicleta rigida Spike",
+        "description": "curabitur convallis duis consequat dui nec nisi volutpat eleifend donec ut dolor morbi vel lectus in quam fringilla rhoncus mauris enim leo rhoncus sed vestibulum sit amet cursus id",
+        "image": "PRODUCTS-bicicleta-005.png",
+        "category": "Bicicletas de paseo",
+        "colors": "Rojo",
+        "price": 851.31
+    },
+    {
+        "id": 6,
+        "name": "Bicicleta Fuji",
+        "description": "nulla integer pede justo lacinia eget tincidunt eget tempus vel pede morbi porttitor lorem id ligula suspendisse ornare consequat lectus in est risus auctor sed tristique in tempus sit amet sem fusce consequat nulla nisl nunc nisl duis",
+        "image": "PRODUCTS-bicicleta-006.png",
+        "category": "Bicicletas de paseo",
+        "colors": "Azul",
+        "price": 950.8
+    },
+    {
+        "id": 7,
+        "name": "Bicicleta doble suspensión",
+        "description": "eu massa donec dapibus duis at velit eu est congue elementum in hac habitasse platea dictumst morbi vestibulum velit id pretium iaculis diam erat fermentum justo nec",
+        "image": "PRODUCTS-bicicleta-007.png",
+        "category": "Bicicletas para niños",
+        "colors": "Negro",
+        "price": 214.0
+    },
+    {
+        "id": 8,
+        "name": "",
+        "description": "amet lobortis sapien sapien non mi integer ac neque duis bibendum morbi non quam nec dui luctus rutrum nulla",
+        "image": "PRODUCTS-bicicleta-008.png",
+        "category": "Bicicletas de montaña",
+        "colors": "Azul",
+        "price": 943.72
+    },
+    {
+        "id": 9,
+        "name": "Bicicleta doble suspensión",
+        "description": "velit nec nisi vulputate nonummy maecenas tincidunt lacus at velit vivamus vel nulla eget eros elementum pellentesque quisque porta volutpat erat quisque erat eros viverra",
+        "image": "PRODUCTS-bicicleta-009.png",
+        "category": "Bicicletas para niños",
+        "colors": "Negro",
+        "price": 126.16
+    },
+    {
+        "id": 10,
+        "name": "Bicicleta rigida Spike",
+        "description": "aenean sit amet justo morbi ut odio cras mi pede malesuada in imperdiet et commodo vulputate justo in blandit ultrices enim lorem ipsum dolor",
+        "image": "PRODUCTS-bicicleta-010.png",
+        "category": "Bicicletas para niños",
+        "colors": "Azul",
+        "price": 121.79
+    }
+]

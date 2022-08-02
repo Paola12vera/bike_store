@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="es">
+  <%- include('/partials/head.ejs') %>    
+<body>
+    <main class="container-fluid">
+      <%- include('../partials/navBar.ejs') %>
+      <!--Listado de nuestros productos-->
+          <div class="container products-wrapper">
+              <div class="row">
+                  <div class="col-12">
+                      <h2 class="products-title">Productos</h2>
+                  </div>
+                  <% bicicletas.forEach(product=> {%>
+                  <div class="col-12 col-sm-6 col-lg-3">
+                      <section class="product-box">
+                          <a href="/products/detail/¿?">
+                              <figure class="product-box_image">
+                                  <img src="/imag/products/¿?" alt="imagen de producto">
+                              </figure>
+                              <article class="product-box_data">
+                                  <h2><%= product.price%></h2>
+                                  <h2><%= product.category%></h2>
+                                  <h2><%= product.colors%></h2>
+                                  <span><%= product.discount%></span>
+                                  <p><%= product.name%></p>
+                                  <i class="fas fa-truck"></i>
+                              </article>
+                          </a>
+                      </section>
+                  </div>
+              </div>
+          </div>
+      </section>
+      <%- include('/partials/footer.ejs') %>
+    </main>
+  </body>
+</html>
