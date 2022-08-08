@@ -1,4 +1,3 @@
-// ************ Require's ************
 const express = require('express');
 const router = express.Router();
 const path = require('path');
@@ -15,27 +14,29 @@ const storage = multer.diskStorage({
 });
   const upload = multer({ storage: storage })
   
-//  Controller Require 
+//  requerir los controllers
 const productsController = require('../controllers/productsController');
 
-// GET ALL PRODUCTS  
-router.get('/', productsController.index); 
+//Traer todos los productosrouter.get('/', productsController.index); 
 
-// CREATE ONE PRODUCT  
+
+// Crear los productos
 router.get('/create/', productsController.create); 
 router.post('/create',upload.single('image'), productsController.store); 
 
+//Listado de produtos
+router.get('/', productsController.listado); 
 
-//GET ONE PRODUCT
+//Detalle de cada produto
 router.get('/:id/', productsController.detail); 
 
-// EDIT ONE PRODUCT
-router.get('/:id/edit', productsController.edit); 
-router.put('/:id', productsController.update); 
+// Editar productos
+router.get('/edit/:id', productsController.edit); 
+router.post('/edit/:id', productsController.update); 
 
 
-// DELETE ONE PRODUCT 
-router.delete('/:id', productsController.destroy); 
+//Borrar un producto
+router.post('/delete/:id', productsController.delete); 
 
 
 module.exports = router;

@@ -9,8 +9,19 @@
     <main>
         <figure class="logo">
             <img src="/img/logo.png" alt="Logo">
-          </figure>  
+          </figure> 
     </main>
+    <h1> Listado de productos</h1>
+
+<ul>
+    <% for (let i=0; i < peliculas.lenght; i++){%>
+    <li>
+        <a href="/productos/<% products[i].id %>"></a>
+        <%products[i].name%>
+    </li>
+    <%}>
+</ul>
+
     <footer>
         <%- include('./partials/footer') %>  
     </footer>

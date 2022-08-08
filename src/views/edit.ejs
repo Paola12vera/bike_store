@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar producto</title>
+   <%# <link rel='stylesheet' href='/css/style.css' /> #%>
+   <%- include('./partials/head') %>  
+
+</head>
+
+<body>
+    <%- include('./partials/navBar') %>  
+
+    <h1 class="titulo">Editar Producto</h1>
+    <br>
+    <section class="formulario">
+        <form action="/product/edit" method="POST" <%#revisar  #%> enctype="multipart/form-data" ></form> 
+            <label for="name">Nombre </label>
+            <p><input type="text" name="name" value="<% product.name %>" ></p>
+
+            <label for="description">Descripcion </label>
+            <p><input type="text" name="description" value="<% product.description %>" ></p>
+
+            <label for="price">Precio </label>
+            <p><input type="number" name="price" value="<% product.price %>" ></p>
+            
+           <%# Revisar label para imagen#%>
+            <div class="custom-file">
+                <input type="file" name="image" >
+            </div> 
+
+            <label for="categories">Categorias </label>
+           <select name="category">
+            <% for (let i=0; i< categories.length; i++){ %>
+                <%if (categories[i].id == product.categories_id){%>
+            <option value="<%=categories[i].id%>" selected>
+                <%=categories[i].name%>
+            </option>
+            <% } else { %> 
+                <option value="<%=categories[i].id%>">
+                <%=categories[i].name%> 
+            </option>
+            <%}%>
+            <%}%>
+           </select>
+
+           <select name="color">
+            <% for (let i=0; i< color.length; i++){ %>
+    
+            <option value="<%=color[i].id%>">
+                <%color[i].name%>
+            </option>
+            <%}%>
+           </select>
+
+            
+            <br>
+            <p> <button type="submit">Editar</button>
+            
+            <a  class="botonVolver" href="/products">Productos</a></p>
+        </form>
+    </section>
+    
+</body>
+
+</html>
