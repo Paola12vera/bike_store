@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agregar producto</title>
+   <%# <link rel='stylesheet' href='/css/style.css' /> #%>
+   <%- include('./partials/head') %>  
+
+</head>
+
+<body>
+    <%- include('./partials/navBar') %>  
+
+    <h1 class="titulo">Agregar Producto</h1>
+    <br>
+    <section class="formulario">
+        <form action="/product/create" method="POST" <%#revisar  #%> enctype="multipart/form-data" ></form> 
+            <label for="name">Nombre </label>
+            <p><input type="text" name="name" id="" required></p>
+
+            <label for="description">Descripcion </label>
+            <p><input type="text" name="description" id="" required> </p>
+
+            <label for="price">Precio </label>
+            <p><input type="number" name="price" id="" required></p>
+            
+           <%# Revisar label para imagen#%>
+            <div class="custom-file">
+                <input type="file" name="image" >
+            </div> 
+
+            <label for="categories">Categorias </label>
+           <select name="category">
+            <% for (let i=0; i< categories.length; i++){ %>
+            <option value="<%=categories[i].id%>">
+                <%categories[i].name%>
+            </option>
+            <%}%>
+           </select>
+
+           <select name="color">
+            <% for (let i=0; i< color.length; i++){ %>
+    
+            <option value="<%=color[i].id%>">
+                <%color[i].name%>
+            </option>
+            <%}%>
+           </select>
+
+            
+            <br>
+            <p> <button class="botonCrear" type="submit">Crear</button>
+            
+            <a  class="botonVolver" href="/products">Productos</a></p>
+        </form>
+    </section>
+    
+</body>
+
+</html>

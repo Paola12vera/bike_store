@@ -2,66 +2,35 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://kit.fontawesome.com/779e4a9c27.js" crossorigin="anonymous"></script>
-    <href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
-</href>
-    <link rel="stylesheet" href="/css/stylesProductDetail.css">
-    <link rel="stylesheet" href="/css/styles.css">
-    <title>BW Bikes Store</title>
+    <title>Productos </title>
+    <%- include('./partials/head') %>  
+
 </head>
 <body>
-    <header>
-        <%- include('./partials/header') %>
-    </header>
-    
-        <div class="box">
-            <div>
-                <img src="img/Z_Astra_1.png" alt="MTB 3 Zebra" class="img_view_datail">      
-                <p class="price">$2100</p>
-                <h4 class="description">BICICLETA SCORPION MTB 29</h4>
-              </div>
-              <article>
-                <p>
-                    Cuadro ASTRA aluminio 6061 "triple butted". Rodado 29.
-                    Horquilla de suspension Rock Shox Recon Silver RL con OneLoc (bloqueo remoto) taper Boost. 100 mm
-                    Shimano SLX 12V (1x12).
-                    Palancas Shimano Deore MT510, 2-PCS.
-                    Frenos a disco hidraulico Shimano MT501.
-                    Componentes Zenith Al Comp.
-                    Ruedas Mavic Crossmax.
-                    Neumaticos Maxxis Ikon 29x2.20.
+    <%- include('./partials/navBar') %>  
 
-                </p>
-              </article>
-              <div >
-               
-            </div>
-            
-        </div>
-        <div class="box_select">
-            <img src="img/Z_Astra_1.png" alt="MTB Z1" class="img_slice">
-            <img src="img/Z_Astra_2.png" alt="MTB Z2" class="img_slice" >
-        </div>
-        <div class="divBotones">
-            <button type="submit">
-                AGREGAR 
-            </button>
-            <button type="submit">
-                QUITAR 
-            </button>
-            <button type="submit">
-               IR AL CARRITO
+    <h1><%= product.name %> </h1>    
+    <br>
+    <p>Descripción: <%= product.description %> </p>
+    <p>Precio: <%='$'+ product.price %> </p>
+    <p>Categoria: <%= product.category.name%> </p>
+    <p>Color: <%= product.colors.name %> </p>
+    <%# Aqui falta insertar el comando para mostrar la imagen del producto %> 
+    <br>
+    <section>
+        <a  href="/product/edit/<%= product.id %>">
+            <button>Editar</button>
+        </a>
 
-            </button>
-        </div>
-  
-    <footer>
-        <%- include('./partials/footer') %>  
-    </footer>
-    
-    
+        <form action="/productos/delete/<% =products.id %> " method="POST">
+        <button type="submit">Borrar</button>
+        </form>
+        </a>       
+        <a  href="/product">
+            <button>Volver</button>
+        </a>
+    </section>
+
 </body>
 </html>
-
