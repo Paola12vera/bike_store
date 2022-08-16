@@ -4,65 +4,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Editar producto</title>
-   <%# <link rel='stylesheet' href='/css/style.css' /> #%>
-   <%- include('./partials/head') %>  
+    <title>Agregar producto</title>
+    <%# <link rel='stylesheet' href='/css/style.css' /> #%>
+    <%- include('./partials/head') %>
 
 </head>
 
 <body>
-    <%- include('./partials/navBar') %>  
+    <%- include('./partials/navBar') %>
+    <h1>Editar producto</h1>
+    <form action="/products/edit/<%=products.id%>" method="POST"> <%#revisar  enctype="multipart/form-data" #%>
+        <div>
+            <label for="">Nombre</label>
+            <input type="text" name="name" value="<%= products.name %> ">
+        </div>
+        <div>
+            <label for="">Descripción</label>
+            <input type="text" name="description" value="<%= products.description %>">
+        </div>
+        <div>
+            <label for="">Precio</label>
+            <input type="text" name="price" value="<%= products.price %>">
+        </div>
+        <%# agregar imagen %>
 
-    <h1 class="titulo">Editar Producto</h1>
+        <label for="colors">Colores </label>
+        <select name="colors">
+            <% for (let i=0; i< colors.length; i++){ %>
+            <% if (colors[i].id=== products.colors_id){ %>
+            <option value="<%=colors[i].id%>" selected>
+                <%=colors[i].name%>
+            </option>
+            <% } else { %>
+            <option value="<%=colors[i].id%>" selected>
+                <%=colors[i].name%>
+            </option>
+            <% } %>
+            <%}%>
+    </select>
     <br>
-    <section class="formulario">
-        <form action="/product/edit" method="POST" <%#revisar  #%> enctype="multipart/form-data" ></form> 
-            <label for="name">Nombre </label>
-            <p><input type="text" name="name" value="<% product.name %>" ></p>
-
-            <label for="description">Descripcion </label>
-            <p><input type="text" name="description" value="<% product.description %>" ></p>
-
-            <label for="price">Precio </label>
-            <p><input type="number" name="price" value="<% product.price %>" ></p>
-            
-           <%# Revisar label para imagen#%>
-            <div class="custom-file">
-                <input type="file" name="image" >
-            </div> 
-
-            <label for="categories">Categorias </label>
-           <select name="category">
-            <% for (let i=0; i< categories.length; i++){ %>
-                <%if (categories[i].id == product.categories_id){%>
-            <option value="<%=categories[i].id%>" selected>
-                <%=categories[i].name%>
-            </option>
-            <% } else { %> 
-                <option value="<%=categories[i].id%>">
-                <%=categories[i].name%> 
-            </option>
-            <%}%>
-            <%}%>
-           </select>
-
-           <select name="color">
-            <% for (let i=0; i< color.length; i++){ %>
-    
-            <option value="<%=color[i].id%>">
-                <%color[i].name%>
-            </option>
-            <%}%>
-           </select>
-
-            
-            <br>
-            <p> <button type="submit">Editar</button>
-            
-            <a  class="botonVolver" href="/products">Productos</a></p>
-        </form>
-    </section>
-    
+    <p> <button type="submit">Editar</button>
+ 
+    <a  class="botonVolver" href="/products">Productos</a></p>
+    </form>
 </body>
-
 </html>

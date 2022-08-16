@@ -7,12 +7,21 @@
 body{
     
     font-family:sans-serif;
-    background-image: linear-gradient(to right top, #b70fee, #db00c8, #ed00a4, #f40083, #f20f68);
+    background-image: linear-gradient(to right top, #9b9b9b, #656666, #494949, #222324, #050505);
     background-repeat: no-repeat;
     background-attachment: fixed;
     padding-bottom: 3em;
     color: white;
 
+}
+.nav-bar-login {
+  padding: 1%;
+  background-color: aliceblue;
+
+}
+.nav-bar-login.enlaces{
+    color: #050505;
+    text-shadow: #050505;
 }
 a{
     color: white;
@@ -51,6 +60,7 @@ h2{
     justify-content: space-around;
     text-decoration:none;
     font-style: oblique;
+
 }
 .enlaces{
     display: flex;

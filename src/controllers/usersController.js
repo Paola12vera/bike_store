@@ -8,14 +8,14 @@ const db = require('../database/models')
 const usersController = {
 	login: function(req, res){
 		db.User.findAll()
-			.then(function(usuarios){
-				res.render("login",{users:users})
+			.then(function(users){
+				res.render(path.resolve(__dirname, "../views/login"),{users:users})
 			})
 	},
     register: function(req, res){
 		db.User.findAll()
-			.then(function(usuarios){
-				res.render("register",{users:users})
+			.then(function(users){
+				res.render(path.resolve(__dirname, "../views/register"),{users:users})
 			})
 	},
 };

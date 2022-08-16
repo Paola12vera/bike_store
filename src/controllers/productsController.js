@@ -4,93 +4,82 @@ const db = require('../database/models')
 
 
 
-
 const productsController = {
 	//Crear producto
-	create: function(req, res){
-		db.Product.findAll()
-			.then(function(productos){
-				return res.render("create",{productos:productos})
-			},
-			{include: [{association:"category"}, {association:"color"}]
+	create: (req, res)=> {
+		db.Color.findAll()
+			.then(function (colors) {
+				return res.render(path.resolve(__dirname, "../views/create"), {colors: colors})
 			})
 	},
 	//guardar producto
-	store: function (req, res) {
-	db.Product.create({
-	
-	name: req.body.name,
-	description: req.body.description,
-	price: req.body.price,
-	image: req.file.image,
-	categories_id:req.body.category,
-	colors_id:req.body.color
-	});
-res.redirect('/products');
-	// let image = 'default-image.png';
-	// 	if (req.file) {
-	// 		image = req.file.filename;
-	// 	}
-	 
+	store: (req, res) => {
+		db.Product.create({
+			name: req.body.name,
+			description: req.body.description,
+			price: req.body.price,
+			colors_id: req.body.colors
+				});
+		res.redirect('/products');
 	},
 	// listado de productos 
-	listado: function(req, res){
+	listado: (req, res)=> {
 		db.Product.findAll()
-			.then(function(productos){
-				res.render("listadoDeProductos",{productos:productos})
+			.then(function (products) {
+				res.render(path.resolve(__dirname, "../views/listadoDeProductos"), {products: products})
 			})
 	},
 
 
 	// Detalle de productos 
-	detail: function(req, res){
-		db.Product.findByPk(req.params.id,{
-			include: [{association:"category"}, {association:"color"}]
-		})
-			.then(function(productos){
-				 res.render("productDetail",{productos:productos})
+	detail: (req, res)=> {
+		db.Product.findByPk(req.params.id, {
+				include: [{	association: "color"}]
+			})
+			.then(function (products) {
+				res.render(path.resolve(__dirname, "../views/productDetail"), {
+					products: products
+				})
 			})
 	},
 
 	// Editar productos
-	edit: function (req, res){
-		let pedidoProductos= db.Product.findByPk(req.params.id)
-		let pedidoCategorias= db.Category.findAll();
-		let pedidoColores= db.Color.findAll();
+	edit: (req, res)=> {
+		let pedidoProductos = db.Product.findByPk(req.params.id)
+		let pedidoColores = db.Color.findAll();
 
-		Promise.all([pedidoProductos, pedidoCategorias, pedidoColores])
-			.then(function([productos, categorias, colores]){
-				res.render("edit",{productos:productos, categorias:categorias, colores:colores});
+		Promise.all([pedidoProductos, pedidoColores])
+			.then(function ([products, colors]) {
+				res.render(path.resolve(__dirname, "../views/edit"), {
+					products: products,
+					colors: colors
+				});
 			})
 	},
 
-
 	// Actualizar
-	update: function(req, res){
+	update: (req, res)=> {
 		db.Product.update({
-	
 			name: req.body.name,
 			description: req.body.description,
 			price: req.body.price,
-			image: req.file.image,
-			categories_id:req.body.category,
-			colors_id:req.body.color
-			},{
-				wehere: {
-					id: req.params.id
-				}	
-			});
-			res.redirect("/products/"+req.params.id)
+			colors_id: req.body.color
+		}, {
+			wehere: {
+				id: req.params.id
+			}
+		});
+		res.redirect("/products/" + req.params.id)
 	},
 
 	// Borrar productos
-	delete :function (req, res) {
+	delete: (req, res)=> {
 		db.Product.destroy({
-			where:{
-				id: req.params.id
-			}
-		}),
-		res.redirect("/products")
+				where: {
+					id: req.params.id
+				}
+			}),
+			res.redirect("/products")
 	}
 };
 

@@ -12,51 +12,34 @@
 
 <body>
     <%- include('./partials/navBar') %>  
+    <h1>Crear producto</h1>
+    <form action="/products/create" method="POST" > <%#revisar  enctype="multipart/form-data" #%>
+    <div>
+    <label for="">Nombre</label>
+    <input type="text" name="name1">
+    </div>
+    <div>
+        <label for="">Descripcion</label>
+        <input type="text" name="description">
+    </div>
+    <div>
+        <label for="">price</label>
+        <input type="text" name="price">
+    </div>
+<%# agregar imagen %> 
 
-    <h1 class="titulo">Agregar Producto</h1>
+    <label for="colors">Colores </label>
+    <select name="colors">
+    <% for (let i=0; i< colors.length; i++){ %>
+    <option value="<%=colors[i].id%>">
+     <%=colors[i].name%>
+    </option>
+    <%}%>
+    </select>
     <br>
-    <section class="formulario">
-        <form action="/product/create" method="POST" <%#revisar  #%> enctype="multipart/form-data" ></form> 
-            <label for="name">Nombre </label>
-            <p><input type="text" name="name" id="" required></p>
-
-            <label for="description">Descripcion </label>
-            <p><input type="text" name="description" id="" required> </p>
-
-            <label for="price">Precio </label>
-            <p><input type="number" name="price" id="" required></p>
-            
-           <%# Revisar label para imagen#%>
-            <div class="custom-file">
-                <input type="file" name="image" >
-            </div> 
-
-            <label for="categories">Categorias </label>
-           <select name="category">
-            <% for (let i=0; i< categories.length; i++){ %>
-            <option value="<%=categories[i].id%>">
-                <%categories[i].name%>
-            </option>
-            <%}%>
-           </select>
-
-           <select name="color">
-            <% for (let i=0; i< color.length; i++){ %>
-    
-            <option value="<%=color[i].id%>">
-                <%color[i].name%>
-            </option>
-            <%}%>
-           </select>
-
-            
-            <br>
-            <p> <button class="botonCrear" type="submit">Crear</button>
-            
-            <a  class="botonVolver" href="/products">Productos</a></p>
-        </form>
-    </section>
-    
+    <p> <button class="botonCrear" type="submit">Crear</button>
+ 
+    <a  class="botonVolver" href="/products">Productos</a></p>
+    </form>
 </body>
-
 </html>

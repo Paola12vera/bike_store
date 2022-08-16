@@ -6,20 +6,17 @@
 <body>
     
     <%- include('./partials/navBar') %>  
-    <main>
-        <figure class="logo">
-            <img src="/img/logo.png" alt="Logo">
-          </figure> 
-    </main>
+    
     <h1> Listado de productos</h1>
 
 <ul>
-    <% for (let i=0; i < peliculas.lenght; i++){%>
+    <% for (let i=0; i < products.length; i++){ %>
     <li>
-        <a href="/productos/<% products[i].id %>"></a>
-        <%products[i].name%>
+        <a href="/products/<%= products[i].id%>">
+        <%=products[i].name%>
+    </a>
     </li>
-    <%}>
+    <%}%>
 </ul>
 
     <footer>

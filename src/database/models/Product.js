@@ -14,10 +14,7 @@ module.exports = (sequelize, dataTypes) => {
              },
         price:{
             type: dataTypes.INTEGER,
-             },
-        categories_id:{
-            type: dataTypes.INTEGER,
-        },
+             },                                          
         colors_id:{
             type: dataTypes.INTEGER,
         }
@@ -28,12 +25,6 @@ module.exports = (sequelize, dataTypes) => {
     };
     const Product = sequelize.define(alias, cols, config);
 
-    Product.associate = function(models){
-        Product.belongsTo(models.Category,{
-            as: "category",
-            foreignKey: "categories_id"
-        });
-    }
     Product.associate = function(models){
         Product.belongsTo(models.Color,{
             as: "color",

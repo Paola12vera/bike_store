@@ -6,10 +6,22 @@ module.exports = (sequelize, dataTypes) => {
             primaryKey: true,
             autoIncrement: true
             },
-        name:{
-            type: dataTypes.STRING,
+        firstName:{
+            type: dataTypes.STRING
              },
-    };
+        lastName:{
+            type: dataTypes.STRING
+            },
+        email:{
+            type: dataTypes.STRING
+            },
+        password:{
+            type: dataTypes.STRING
+            },            
+        roles_id:{
+            type: dataTypes.INTEGER,
+            } 
+        }; 
     const config= {
         tableName:"users",
         timestamps: false

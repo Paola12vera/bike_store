@@ -1,36 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Productos </title>
     <%- include('./partials/head') %>  
-
 </head>
 <body>
+    
     <%- include('./partials/navBar') %>  
-
-    <h1><%= product.name %> </h1>    
     <br>
-    <p>Descripción: <%= product.description %> </p>
-    <p>Precio: <%='$'+ product.price %> </p>
-    <p>Categoria: <%= product.category.name%> </p>
-    <p>Color: <%= product.colors.name %> </p>
-    <%# Aqui falta insertar el comando para mostrar la imagen del producto %> 
-    <br>
-    <section>
-        <a  href="/product/edit/<%= product.id %>">
-            <button>Editar</button>
-        </a>
+    <main>
+<h1> <%= products.name %> </h1> 
+<br>
+<h3>Descripción : <%= products.description %> </h3>
+<h3>Precio : $ <%= products.price %> </h3>
+<h3>Color : <%= products.color.name %> </h3>
 
-        <form action="/productos/delete/<% =products.id %> " method="POST">
-        <button type="submit">Borrar</button>
-        </form>
-        </a>       
-        <a  href="/product">
-            <button>Volver</button>
-        </a>
-    </section>
+<br>
+<a  href="/products/edit/<%= products.id %> ">
+    <button>Editar</button> 
+</a>
+<a  href="/products/delete/<%= products.id %> ">
+    <button>Borrar</button> 
+</a>
 
+            
+
+
+</main>
+    <footer>
+        <%- include('./partials/footer') %>  
+    </footer>
+    
+    
 </body>
 </html>
