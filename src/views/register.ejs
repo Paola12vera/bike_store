@@ -2,22 +2,32 @@
 <html lang="en">
 <head>
    
-    <%- include('./partials/headL&R') %>  
+    <%- include('./partials/head') %>  
+  
 </head>
 <body>
     <%- include('./partials/navBar') %>  
-
+   
 <main class="form-box">
 <form action="/" method="POST">
     <input type="text" name="name" placeholder="Nombre y apellido">
+    <br>
+    <br>
     <input type="text" name="user" placeholder="Nombre de usuario">
+    <br>
+    <br>
     <input type="email" name="email" placeholder="E-mail">
+    <br>
     <br>
     <label for="birth_date"><b>Fecha de nacimiento</b></label>
     <br>
+    <br>
     <input type="date" name="birth_date" id="birth_date">
     <br>
+    <br>
     <input type="text" name="addres" placeholder="Domicilio">
+    <br>
+    <br>
     <button  type= "submit">
         Aceptar 
     </button>

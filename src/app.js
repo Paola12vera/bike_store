@@ -18,6 +18,7 @@ app.use('/', mainRoutes);
 app.use('/products', productsRoutes);
 app.use('/users', usersRoutes);
 
+
 //Levantar el servidor
 const port = process.env.PORT || 3000;
 app.listen(port, () => {

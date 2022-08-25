@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agregar usuario</title>
+   <%# <link rel='stylesheet' href='/css/style.css' /> #%>
+   <%- include('./partials/head') %>  
+
+</head>
+
+<body>
+    <%- include('./partials/navBar') %>  
+    <h1>Crear usuario</h1>
+    <form action=""  method="POST" enctype="multipart/form-data">
+    <div>
+    <label for="">Nombre</label>
+    <input type="text" name="firstName">
+    </div>
+    <div>
+        <label for="">Apellido</label>
+        <input type="text" name="lastName">
+    </div>
+    <div>
+        <label for="">Email</label>
+        <input type="text" name="email">
+    </div>
+
+
+    <label for="roles">Roles </label>
+    <select name="roles">
+    <% for (let i=0; i< roles.length; i++){ %>
+    <option value="<%=roles[i].id%>">
+     <%=roles[i].name%>
+    </option>
+    <%}%>
+    </select>
+    <br>
+    <p> <button class="botonCrear" type="submit">Crear</button>
+ 
+    </form>
+</body>
+</html>

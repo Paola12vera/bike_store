@@ -14,10 +14,13 @@ module.exports = (sequelize, dataTypes) => {
              },
         price:{
             type: dataTypes.INTEGER,
-             },                                          
+             },                                         
         colors_id:{
             type: dataTypes.INTEGER,
-        }
+        },
+        image:{
+            type: dataTypes.INTEGER,
+             }
     };
     const config= {
         tableName:"products",

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agregar usuario</title>
+    <link rel='stylesheet' href='/css/style.css' /> 
+    <%- include('./partials/head') %>
+
+</head>
+
+<body>
+    <%- include('./partials/navBar') %>
+    <h1>Editar Usuario</h1>
+    <form action="/users/edit/<%=users.id%>" method="POST">
+        <div>
+            <label for="">Nombre</label>
+            <input type="text" name="firstName" value="<%= users.firstName %> ">
+        </div>
+        <div>
+            <label for="">Apellido</label>
+            <input type="text" name="lastName" value="<%= users.lastName %>">
+        </div>
+        <div>
+            <label for="">Email</label>
+            <input type="text" name="email" value="<%= users.email %>">
+        </div>
+
+        <label for="roles">Roles </label>
+        <select name="roles">
+            <% for (let i=0; i< roles.length; i++){ %>
+            <% if (roles[i].id=== users.roles_id){ %>
+            <option value="<%=roles[i].id%>" selected>
+                <%=roles[i].name%>
+            </option>
+            <% } else { %>
+            <option value="<%=roles[i].id%>" selected>
+                <%=roles[i].name%>
+            </option>
+            <% } %>
+            <%}%>
+    </select>
+    <br>
+    <p> <button type="submit">Editar</button>
+ 
+    <a  class="botonVolver" href="/">Inicio</a></p>
+    </form>
+</body>
+</html>

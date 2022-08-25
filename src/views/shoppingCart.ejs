@@ -8,28 +8,21 @@
     <%- include('./partials/navBar') %>  
     <br>
     <main>
-<h1> <%= products.name %> </h1> 
+        <h1>Carrito de compras </h1>
 <br>
+<h3> <%= products.name %> </h3> 
 <h3>Descripción : <%= products.description %> </h3>
 <h3>Precio : $ <%= products.price %> </h3>
-<h3>Color : <%= products.color.name %> </h3>
 <figure class="imagen-producto">
     <img src=<%=products.image%> alt="imagen del producto">
 </figure>
+
 <br>
-<a  href="/products/edit/<%= products.id %> ">
-    <button>Editar</button> 
-</a>
-
-<a  href="/products/delete/<%= products.id %> ">
-    <button>Borrar</button> 
-</a>
-<a  href="/shopping/<%= products.id %> ">
-    <button>Agregar al carrito</button> 
-</a>
-         
-
-
+    <div class="spinner"><button class="quantityMas">+</button>
+    <INPUT TYPE="NUMBER" MIN="0" MAX="100" STEP="1" VALUE="1" class="inputSpinner">
+    <button class="quantityMenos">-</button>
+    <button type="reset" name="borrar"><i class="fas fa-times-circle"></i></button> </div>
+            
 </main>
     <footer>
         <%- include('./partials/footer') %>  

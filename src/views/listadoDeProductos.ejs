@@ -4,7 +4,7 @@
     <%- include('./partials/head') %>  
 </head>
 <body>
-    
+    <link rel='stylesheet' href='/css/style.css' />    
     <%- include('./partials/navBar') %>  
     
     <h1> Listado de productos</h1>
@@ -14,6 +14,9 @@
     <li>
         <a href="/products/<%= products[i].id%>">
         <%=products[i].name%>
+        <figure class="imagen-producto">
+            <img src=<%=products[i].image%> alt="imagen del producto">
+        </figure>
     </a>
     </li>
     <%}%>

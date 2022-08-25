@@ -24,6 +24,7 @@ const path = require('path');
 router.get('/create', productsController.create); 
 router.post('/create', productsController.store); 
 
+
 //Listado de produtos
 router.get('/', productsController.listado); 
 

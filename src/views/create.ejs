@@ -13,10 +13,10 @@
 <body>
     <%- include('./partials/navBar') %>  
     <h1>Crear producto</h1>
-    <form action="/products/create" method="POST" > <%#revisar  enctype="multipart/form-data" #%>
+    <form action="/products/create"  method="POST" enctype="multipart/form-data">
     <div>
     <label for="">Nombre</label>
-    <input type="text" name="name1">
+    <input type="text" name="name">
     </div>
     <div>
         <label for="">Descripcion</label>
@@ -26,7 +26,9 @@
         <label for="">price</label>
         <input type="text" name="price">
     </div>
-<%# agregar imagen %> 
+    <p>
+        <input type="file" name="image">
+    </p>
 
     <label for="colors">Colores </label>
     <select name="colors">

@@ -13,15 +13,17 @@ const productsController = {
 			})
 	},
 	//guardar producto
+		  
 	store: (req, res) => {
-		db.Product.create({
-			name: req.body.name,
-			description: req.body.description,
-			price: req.body.price,
-			colors_id: req.body.colors
-				});
-		res.redirect('/products');
-	},
+	db.Product.create({
+	name: req.body.name,
+	description: req.body.description,
+	price: req.body.price,
+	colors_id: req.body.colors
+	});
+	res.redirect('/products');
+	}, 
+
 	// listado de productos 
 	listado: (req, res)=> {
 		db.Product.findAll()
@@ -65,7 +67,7 @@ const productsController = {
 			price: req.body.price,
 			colors_id: req.body.color
 		}, {
-			wehere: {
+			where: {
 				id: req.params.id
 			}
 		});
